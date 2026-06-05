@@ -1,0 +1,21 @@
+.option-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+
+  border: 1px solid #ddd;
+  border-radius: 12px;
+
+  padding: 20px;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.option-card:hover {
+  border-color: #0056d2;
+}
+
+.option-card.selected {
+  border: 2px solid #0056d2;
+}
