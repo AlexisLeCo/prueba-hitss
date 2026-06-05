@@ -1,0 +1,6 @@
+@import "./variables.css";
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+}
