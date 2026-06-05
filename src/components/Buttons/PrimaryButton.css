@@ -1,24 +1,26 @@
 .primary-button {
-  background: var(--primary-color);
-  color: white;
   border: none;
-  padding: 13px 32px;
+  padding: 13px 34px;
   border-radius: 999px;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
 }
 
-.primary-button:hover {
-  background: var(--primary-dark);
+.primary-button.primary {
+  background: #e2231a;
+  color: white;
 }
 
-.primary-button.outline {
-  background: white;
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
+.primary-button.primary:hover {
+  background: #c91f18;
 }
 
-.primary-button.outline:hover {
-  background: #fff3f2;
+.primary-button.dark {
+  background: #3a3a3a;
+  color: white;
+}
+
+.primary-button.dark:hover {
+  background: #242424;
 }

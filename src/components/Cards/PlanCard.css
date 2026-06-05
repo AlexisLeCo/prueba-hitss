@@ -10,12 +10,10 @@
   grid-template-columns: 24px 1fr;
   gap: 22px;
   align-items: center;
-
   padding: 28px 32px;
   border: 1px solid #dcdcdc;
   border-radius: 14px;
-
-  background: #fff;
+  background: white;
   text-align: left;
   cursor: pointer;
   transition: 0.2s ease;

@@ -30,7 +30,7 @@ function Step1({ nextStep }) {
   ];
 
   return (
-    <>
+    <div className="wizard-wrapper">
       <WizardLayout
         sidebar={
           <StepSidebar
@@ -56,7 +56,7 @@ function Step1({ nextStep }) {
       <div className="wizard-actions">
         <WizardNavigation showBack={false} onNext={nextStep} />
       </div>
-    </>
+    </div>
   );
 }
 

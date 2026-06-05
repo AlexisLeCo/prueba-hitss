@@ -6,7 +6,7 @@ function WizardNavigation({ onBack, onNext, showBack = true }) {
     <div className="wizard-navigation">
       <div>
         {showBack && (
-          <PrimaryButton onClick={onBack} variant="outline">
+          <PrimaryButton onClick={onBack} variant="dark">
             Regresar
           </PrimaryButton>
         )}

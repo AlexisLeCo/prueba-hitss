@@ -19,30 +19,43 @@ function App() {
   };
 
   const restart = () => {
-  setCurrentStep(1);
-};
+    setCurrentStep(1);
+  };
 
-  switch (currentStep) {
-    case 1:
-      return <Step1 nextStep={nextStep} />;
-
-    case 2:
-      return <Step2 nextStep={nextStep} prevStep={prevStep} />;
-    case 3:
-      return <Step3 nextStep={nextStep} prevStep={prevStep} />;
-
-    case 4:
-      return <Step4 nextStep={nextStep} prevStep={prevStep} />;
-
-    case 5:
-      return <Step5 nextStep={nextStep} prevStep={prevStep} />;
-
-    case 6:
-      return <Success restart={restart} />;
-
-    default:
-      return <Step1 nextStep={nextStep} />;
+  if (currentStep === 6) {
+    return <Success restart={restart} />;
   }
+
+  return (
+    <div className="page">
+      <header className="header">
+        <h1>Tecnología para tu Empresa</h1>
+        <p>
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It
+          has roots in a piece of classical Latin literature from 45 BC, making
+          it over 2000 years old.
+        </p>
+      </header>
+
+      {currentStep === 1 && <Step1 nextStep={nextStep} />}
+
+      {currentStep === 2 && (
+        <Step2 nextStep={nextStep} prevStep={prevStep} />
+      )}
+
+      {currentStep === 3 && (
+        <Step3 nextStep={nextStep} prevStep={prevStep} />
+      )}
+
+      {currentStep === 4 && (
+        <Step4 nextStep={nextStep} prevStep={prevStep} />
+      )}
+
+      {currentStep === 5 && (
+        <Step5 nextStep={nextStep} prevStep={prevStep} />
+      )}
+    </div>
+  );
 }
 
 export default App;
