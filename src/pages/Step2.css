@@ -1,0 +1,11 @@
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.buttons {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+}
