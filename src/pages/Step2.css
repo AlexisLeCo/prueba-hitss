@@ -9,3 +9,14 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
