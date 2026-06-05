@@ -3,6 +3,7 @@ import { useState } from "react";
 import Step1 from "./pages/Step1";
 import Step2 from "./pages/Step2";
 import Step3 from "./pages/Step3";
+import Step4 from "./pages/Step4";
 
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -23,6 +24,9 @@ function App() {
       return <Step2 nextStep={nextStep} prevStep={prevStep} />;
     case 3:
       return <Step3 nextStep={nextStep} prevStep={prevStep} />;
+
+    case 4:
+      return <Step4 nextStep={nextStep} prevStep={prevStep} />;
 
     default:
       return <Step1 nextStep={nextStep} />;
