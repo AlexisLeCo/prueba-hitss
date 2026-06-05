@@ -3,7 +3,7 @@ import StepSidebar from "../components/Sidebar/StepSidebar";
 import PlanCard from "../components/Cards/PlanCard";
 import PrimaryButton from "../components/Buttons/PrimaryButton";
 
-function Step1() {
+function Step1({ nextStep }) {
   const plans = [
     {
       id: 1,
@@ -43,9 +43,7 @@ function Step1() {
         />
       ))}
 
-      <PrimaryButton>
-        Siguiente
-      </PrimaryButton>
+      <PrimaryButton onClick={nextStep}>Siguiente</PrimaryButton>
     </WizardLayout>
   );
 }

@@ -1,7 +1,34 @@
+import { useState } from "react";
+
 import Step1 from "./pages/Step1";
+import Step2 from "./pages/Step2";
 
 function App() {
-  return <Step1 />;
+  const [currentStep, setCurrentStep] = useState(1);
+
+  const nextStep = () => {
+    setCurrentStep((prev) => prev + 1);
+  };
+
+  const prevStep = () => {
+    setCurrentStep((prev) => prev - 1);
+  };
+
+  switch (currentStep) {
+    case 1:
+      return <Step1 nextStep={nextStep} />;
+
+    case 2:
+      return (
+        <Step2
+          nextStep={nextStep}
+          prevStep={prevStep}
+        />
+      );
+
+    default:
+      return <Step1 nextStep={nextStep} />;
+  }
 }
 
 export default App;
