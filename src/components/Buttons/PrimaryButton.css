@@ -1,13 +1,24 @@
 .primary-button {
-  background: #0056d2;
+  background: var(--primary-color);
   color: white;
   border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 16px;
+  padding: 13px 32px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
 }
 
 .primary-button:hover {
-  opacity: .9;
+  background: var(--primary-dark);
+}
+
+.primary-button.outline {
+  background: white;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.primary-button.outline:hover {
+  background: #fff3f2;
 }

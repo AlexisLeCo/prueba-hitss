@@ -1,24 +1,18 @@
 import "./WizardNavigation.css";
 import PrimaryButton from "../Buttons/PrimaryButton";
 
-function WizardNavigation({
-  onBack,
-  onNext,
-  showBack = true,
-}) {
+function WizardNavigation({ onBack, onNext, showBack = true }) {
   return (
     <div className="wizard-navigation">
       <div>
         {showBack && (
-          <PrimaryButton onClick={onBack}>
+          <PrimaryButton onClick={onBack} variant="outline">
             Regresar
           </PrimaryButton>
         )}
       </div>
 
-      <PrimaryButton onClick={onNext}>
-        Siguiente
-      </PrimaryButton>
+      <PrimaryButton onClick={onNext}>Siguiente</PrimaryButton>
     </div>
   );
 }
