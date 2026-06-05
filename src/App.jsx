@@ -5,6 +5,7 @@ import Step2 from "./pages/Step2";
 import Step3 from "./pages/Step3";
 import Step4 from "./pages/Step4";
 import Step5 from "./pages/Step5";
+import Success from "./pages/Success";
 
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -16,6 +17,10 @@ function App() {
   const prevStep = () => {
     setCurrentStep((prev) => prev - 1);
   };
+
+  const restart = () => {
+  setCurrentStep(1);
+};
 
   switch (currentStep) {
     case 1:
@@ -31,6 +36,9 @@ function App() {
 
     case 5:
       return <Step5 nextStep={nextStep} prevStep={prevStep} />;
+
+    case 6:
+      return <Success restart={restart} />;
 
     default:
       return <Step1 nextStep={nextStep} />;
