@@ -1,13 +1,20 @@
-function StepSidebar() {
+import StepIndicator from "../Stepper/StepIndicator";
+
+
+function StepSidebar({
+  step,
+  title,
+  description,
+}) {
   return (
     <>
-      <h3>Paso 1</h3>
+      <h3>Paso {step}</h3>
 
-      <h2>Plan Asignado</h2>
+      <h2>{title}</h2>
 
-      <p>
-        Contrary to popular belief, Lorem Ipsum is not simply random text.
-      </p>
+      <p>{description}</p>
+
+      <StepIndicator currentStep={step} />
     </>
   );
 }
