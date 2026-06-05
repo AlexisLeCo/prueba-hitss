@@ -1,21 +1,67 @@
+.plans-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
 .plan-card {
-  border: 1px solid #e5e5e5;
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 16px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 22px;
+  align-items: center;
+
+  padding: 28px 32px;
+  border: 1px solid #dcdcdc;
+  border-radius: 14px;
+
+  background: #fff;
+  text-align: left;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.2s ease;
+}
+
+.plan-card.selected {
+  background: #eaf7f8;
+  border-color: #c8e3e6;
 }
 
 .plan-card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
-.plan-card h3 {
-  margin-bottom: 12px;
+.plan-radio {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #9c9c9c;
+  border-radius: 50%;
+  position: relative;
 }
 
-.plan-card p {
-  color: #666;
+.plan-card.selected .plan-radio::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #007765;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+
+.plan-info h3 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.plan-info strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.plan-info p {
+  color: #4d4d4d;
   line-height: 1.5;
 }

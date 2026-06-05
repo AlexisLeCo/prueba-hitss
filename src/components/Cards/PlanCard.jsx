@@ -1,14 +1,22 @@
 import "./PlanCard.css";
 
-function PlanCard({ title, description }) {
+function PlanCard({ title, description, selected, onClick }) {
   return (
-    <div className="plan-card">
-      <h3>{title}</h3>
+    <button
+      className={`plan-card ${selected ? "selected" : ""}`}
+      onClick={onClick}
+      type="button"
+    >
+      <span className="plan-radio" />
 
-      <p>Incluye:</p>
+      <div className="plan-info">
+        <h3>{title}</h3>
 
-      <p>{description}</p>
-    </div>
+        <strong>Incluye:</strong>
+
+        <p>{description}</p>
+      </div>
+    </button>
   );
 }
 

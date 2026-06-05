@@ -62,3 +62,15 @@
     padding: 32px 24px;
   }
 }
+.wizard-actions {
+  max-width: 1024px;
+  margin: 32px auto 0;
+}
+
+.wizard-actions .wizard-navigation {
+  justify-content: flex-end;
+}
+
+.content {
+  padding: 44px 44px;
+}
