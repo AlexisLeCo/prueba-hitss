@@ -1,22 +1,15 @@
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  column-gap: 52px;
+  row-gap: 18px;
+  max-width: 680px;
 }
 
-.buttons {
-  margin-top: 32px;
-  display: flex;
-  justify-content: space-between;
-}
-
-@media (max-width: 768px) {
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .buttons {
-    flex-direction: column;
-    gap: 12px;
-  }
+.form-section-title {
+  grid-column: 1 / -1;
+  font-size: 18px;
+  font-weight: 700;
+  color: #555;
+  margin-top: 6px;
 }

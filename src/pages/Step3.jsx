@@ -2,74 +2,51 @@ import { useState } from "react";
 
 import WizardLayout from "../components/Layout/WizardLayout";
 import StepSidebar from "../components/Sidebar/StepSidebar";
-import PrimaryButton from "../components/Buttons/PrimaryButton";
 import OptionCard from "../components/Cards/OptionCard";
+import WizardNavigation from "../components/Navigation/WizardNavigation";
 
 function Step3({ nextStep, prevStep }) {
-  const [selectedOption, setSelectedOption] =
-    useState("");
+  const [selectedOption, setSelectedOption] = useState("");
 
   return (
-    <WizardLayout
-      sidebar={
-        <StepSidebar
-          step={3}
-          title="Activa a tu familia con Bolívar y Claro"
-          description="Dependiendo del tipo de línea de tu familiar, elige una de las siguientes opciones."
-        />
-      }
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "20px",
-        }}
+    <div className="wizard-wrapper">
+      <WizardLayout
+        sidebar={
+          <StepSidebar
+            step={3}
+            title="¡Activa a tu familia con Bolívar y Claro!"
+            description="Dependiendo del tipo de línea de tu familiar, elige una de las siguientes opciones."
+          />
+        }
       >
-        <OptionCard
-          title="Línea Nueva"
-          description="Si deseas un nuevo número y recibir una nueva SIM Card."
-          selected={
-            selectedOption === "nueva"
-          }
-          onClick={() =>
-            setSelectedOption("nueva")
-          }
-        />
+        <div className="option-list">
+          <OptionCard
+            title="Línea Nueva"
+            description="Si deseas un nuevo número y recibir una nueva SIM Card, elige esta opción."
+            selected={selectedOption === "nueva"}
+            onClick={() => setSelectedOption("nueva")}
+          />
 
-        <OptionCard
-          title="Inclusión Claro"
-          description="Si eres usuario actual de Claro."
-          selected={
-            selectedOption === "claro"
-          }
-          onClick={() =>
-            setSelectedOption("claro")
-          }
-        />
+          <OptionCard
+            title="Inclusión Claro"
+            description="Si eres usuario actual de Claro y quieres cambiar tu plan, elige esta opción."
+            selected={selectedOption === "claro"}
+            onClick={() => setSelectedOption("claro")}
+          />
 
-        <OptionCard
-          title="Portabilidad"
-          description="Si deseas conservar tu número."
-          selected={
-            selectedOption === "portabilidad"
-          }
-          onClick={() =>
-            setSelectedOption("portabilidad")
-          }
-        />
+          <OptionCard
+            title="Portabilidad"
+            description="Si eres usuario de otro operador y deseas conservar tu número, elige esta opción."
+            selected={selectedOption === "portabilidad"}
+            onClick={() => setSelectedOption("portabilidad")}
+          />
+        </div>
+      </WizardLayout>
+
+      <div className="wizard-actions">
+        <WizardNavigation onBack={prevStep} onNext={nextStep} />
       </div>
-
-      <div className="buttons">
-        <PrimaryButton onClick={prevStep}>
-          Regresar
-        </PrimaryButton>
-
-        <PrimaryButton onClick={nextStep}>
-          Siguiente
-        </PrimaryButton>
-      </div>
-    </WizardLayout>
+    </div>
   );
 }
 
